@@ -13,10 +13,10 @@ router.get('/',(req,res,next)=>{
 })
 
 router.post("/todo",(req,res,next)=>{
-
+    const body=req.body as {text:string};
    const newTodo:Todo={
     id:new Date().toISOString(),
-    text:req.body.text
+    text:body.text
    }; 
 
    todos.push(newTodo);
